@@ -1,5 +1,6 @@
 package com.dalydays.android.roomwordsamplekotlin.data.db
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -8,7 +9,7 @@ import androidx.room.Query
 interface WordDao {
 
     @Query("SELECT * FROM word ORDER BY word ASC")
-    fun getAllWords(): List<Word>
+    fun getAllWords(): LiveData<List<Word>>
 
     @Insert
     fun insert(word: Word)
