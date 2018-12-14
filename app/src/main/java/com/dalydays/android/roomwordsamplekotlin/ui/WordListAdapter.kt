@@ -11,9 +11,9 @@ import com.dalydays.android.roomwordsamplekotlin.data.db.Word
 
 class WordListAdapter internal constructor(context: Context) : RecyclerView.Adapter<WordListAdapter.WordViewHolder>() {
     private val inflater: LayoutInflater = LayoutInflater.from(context)
-    private var words = emptyList<Word>()
+    private var words = emptyList<Word>() // cached copy of words
 
-    inner class WordViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class WordViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val wordItemView: TextView = itemView.findViewById(R.id.textView)
     }
 
